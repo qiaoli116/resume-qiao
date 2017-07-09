@@ -1,0 +1,422 @@
+/* font
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Droid Serif', serif;
+*/
+/* color
+    #f34540: rgba(243, 69, 64, a)
+*/
+.unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hidden {
+    display:none;
+}
+
+.wrapper {
+    width: 1300px;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: #404040;
+    font-size: 12px;
+}
+.tooltip > .tooltip-arrow { border-bottom-color:#404040; }
+/* >>> aside */
+aside {
+    padding-top: 42px;
+    padding-left: 55px;
+    float: left;
+    width: 400px;
+    position: fixed;
+    z-index: 0;
+}
+header{
+    display: inline-block;
+    border-bottom: 1px solid #888888;
+    margin-bottom: 40px;
+}
+header div:nth-of-type(1) {
+    display:inline-block;
+    margin-top:7px;
+    margin-right:3px;
+    padding: 0 4px 0 4px;
+    
+    font-size: 36px;
+    color:#ffffff;
+    background-color: #404040;
+    
+    cursor:default;
+}
+header .logo {
+    transform:translateY(-15px);
+}
+header div:nth-of-type(2) {
+    font-size: 36px;
+    color: #f34540;
+    
+    transform:translateY(-10px);
+    
+    cursor:default;
+}
+
+nav ul{
+    list-style-type: none;
+    cursor:default;
+    font-size:24px;
+}
+nav ul li a{
+    color: #404040;
+    background-color: #ffffff;
+}
+
+nav ul li a:hover,nav ul li a:focus, nav ul .dropbtn:hover{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #404040;
+    outline: none;
+}
+
+nav ul li a.download {
+    font-size: 18px;
+}
+
+nav ul li a.download:hover, nav ul li a.download:focus {
+    font-size: 18px;
+    background-color: transparent !important;
+    color: #f34540 !important;
+}
+
+nav ul li{
+    margin-bottom: 25px;
+}
+nav ul li.active{
+    color: #f34540;
+}
+
+nav ul .dropbtn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+nav ul .dropdown{
+    display: inline-block;
+    background-color: #ffffff;
+}
+
+nav ul .dropdown .dropdown-content{
+    /*display: none;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    text-align: center;
+    background: #ffffff;
+    z-index: 10;
+    max-height: 0;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+nav ul .dropdown .dropdown-content a{
+    display: block;
+    padding: 5px 0 5px 0;
+    margin: 0 10px 0 10px;
+    border-bottom: solid 1px #888888;
+}
+nav ul .dropdown .dropdown-content a:last-of-type {
+    border-bottom: none;
+}
+nav ul .dropdown .dropdown-content a:hover {
+    background-color: transparent;
+    color: #f34540
+}
+nav ul .dropdown .dropdown-content a i.fa-envelope-o:hover::before{
+    content: "\f2b7";
+}
+nav ul .dropdown:hover .dropdown-content {
+    /*display: block;*/
+    max-height: 1000px;
+}
+
+/* <<< aside */
+
+/* >>> index.main */
+main {
+    float:right;
+    padding-left:50px;
+    padding-top: 80px;
+    padding-right: 55px;
+    width: 890px;
+    background-color: white;
+    /* set the position to relative so that the z-index will interact with the z-index of aside*/
+    position: relative;
+    z-index: 1;
+    
+}
+main .tags {
+    text-align: center;
+    margin-bottom: 10px;
+}
+main .tags i{
+    margin: 0 10px;
+    cursor: pointer;
+    color: #404040;
+}
+main .tags i.active{
+    color: #f34540;
+}
+main .tags i:hover::before {
+    content: "\f10c";
+    color: #404040;
+}
+main .pages .page {
+    display: none;
+    color: #404040;
+}
+main .pages .page.active {
+    display:block;
+}
+
+main .page .title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Droid Serif', serif;
+    font-size: 36px;
+}
+main .page .ee-history {
+    width: 100%;
+}
+
+.ee-history .v-line {
+    margin: 0 auto;
+    display: block;
+    width: 0;
+    height: 50px;
+    border: solid 1px #888888;
+}
+.ee-history .ee-element {
+    margin: 0 auto;
+    display: block;
+    width: 625px;
+    min-height: 145px;
+    border: solid 1px #888888;
+    text-align: center;
+    position: relative;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    
+    overflow: hidden;
+    
+}
+.ee-history .ee-element:hover {
+    border: solid 1px #f34540;
+}
+.ee-brief .time {
+    display: inline-block;
+    border-bottom: solid 1px #888888;
+    margin-bottom: 5px;
+}
+.ee-history .ee-element:hover .ee-brief .time{
+    border-bottom: solid 1px #f34540;
+}
+.ee-brief p {
+    margin: 0;
+}
+
+.ee-history .ee-element .ee-detail {
+    
+    margin: 5px 10px 25px 10px;
+    padding: 3px 0;
+    text-align: left;
+    font-size: 18px;
+    border-top: solid 1px #888888;
+    max-height: 1000px;
+    transition: max-height 0.5s, color 1s, border-top-color 0.5s;
+    
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+.ee-history .ee-element:hover .ee-detail {
+    border-top-color: #f34540;
+}
+
+.ee-history .ee-element.hide-detail .ee-detail{
+    /* set max-height & overflow to hide the element */
+    max-height: 0;
+    overflow: hidden;
+    
+    color: transparent;
+    border-top-color: transparent;
+}
+.ee-detail > *{
+    margin: 0;
+}
+.ee-detail .role{
+    padding-left: 20px;
+    font-weight: 600;
+}
+.ee-history .ee-element i.detail {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    
+    /* set left and transform translateX to center the element horizontally*/
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding-bottom: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+.ee-history .ee-element i.detail:hover{
+    color: #f34540;
+}
+.ee-history .ee-element:hover i.detail {
+    display: inline-block;
+}
+
+/* change the direction of angle when hiding / un-hiding role details */
+.ee-history .ee-element.hide-detail i.detail:before {
+    /* content: "\f107" means fa-angle-down */
+    content: "\f107";
+}
+
+.skill-list {
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 20px;
+}
+.skill-list p {
+    font-size: 24px;
+}
+.skill-list p.no-bullet{
+    margin-bottom: 0.5rem;
+}
+.skill-list p.bullet {
+    margin-bottom: 0;
+}
+
+.skill-list ul {
+    font-size: 18px;
+}
+
+main.portfolio {
+    padding-top: 50px;
+}
+main.portfolio .group-title {
+    font-family: 'Droid Serif', serif;
+    font-size: 36px;
+    color: #404040;
+}
+
+.card-deck {
+    flex-flow: row wrap;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: solid 1px #888888;
+}
+.card-deck .card{
+    flex-grow: 0;
+}
+.card-deck .card .card-block {
+    border-top: 1px solid rgba(0,0,0,.125);
+    position: relative;
+    padding-top: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #404040;
+}
+.card-deck .card .logo {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,.125);;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+.card-deck .card .logo img {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+}
+.card-deck .card img.breakfast-hub{
+    background-color: crimson;
+}
+.card-deck .card .card-image-top {
+    width: 239px;
+}
+.card-deck .card .card-block a {
+    font-weight: 600;
+    color: #404040;
+    text-decoration: none;
+}
+.card-deck .card .card-block a:hover {
+    color: #f34540;
+    text-decoration: none;
+}
+.card-deck .card .card-block .card-text {
+    margin-bottom: 10px;
+}
+.card-deck .card .card-block .card-footer{
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+}
+.card-deck .card:hover, .card-deck .card:hover .logo{
+    border: 1px solid rgba(243, 69, 64, .5);
+}
+
+
+.card-deck .card:hover .card-block, .card-deck .card:hover .card-footer{
+    border-top: 1px solid rgba(243, 69, 64, .5);
+}
+/* <<< main */
+
+/* >>> footer */
+footer {
+    text-align: center;
+    margin: 20px 55px;
+    border-top: solid 1px #888888;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #404040;
+}
+footer i {
+    margin: 10px;
+}
+footer i a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #404040;
+}
+
+footer i a:hover{
+    color: #f34540;
+    text-decoration: none;
+}
+
+footer a.social-media {
+    font-size: 20px;
+    color: #404040;
+}
+
+footer a.social-media:hover {
+    color: #f34540;
+}
+/* <<< footer */
+
